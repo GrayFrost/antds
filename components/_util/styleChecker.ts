@@ -53,10 +53,8 @@ export const detectFlexGapSupported = () => {
 
   // append to the DOM (needed to obtain scrollHeight)
   document.body.appendChild(flex);
-  console.log('zzh test flex', [flex]);
   flexGapSupported = flex.scrollHeight === 1; // flex container should be 1px high from the row-gap
   document.body.removeChild(flex);
-  console.log('zzh support', flexGapSupported);
   return flexGapSupported;
 };
 

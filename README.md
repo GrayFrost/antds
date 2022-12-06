@@ -24,6 +24,8 @@ $$restProps
 $$props.$$slot
 ```
 
+可选参数，将参数导出为undefined, export let a = undefined
+
 ## WIP
 - [ ] button
 - [x] col

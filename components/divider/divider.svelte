@@ -4,9 +4,9 @@
   export let prefixCls = 'ant';
   export let type = 'horizontal';
   export let orientation = '';
-  let className;
+  let className = undefined;
   export { className as class };
-  export let dashed;
+  export let dashed = undefined;
 
   const restProps = $$restProps;
   const orientationPrefix = (orientation.length > 0) ? '-' + orientation : orientation;

@@ -1,7 +1,8 @@
-<script>
+<script context="module">
   const customCache = new Set();
 
-  export function create(options = {}) {
+  export function createFromIconfontScriptCN(options = {}) {
+    const { scriptUrl } = options;
     /**
      * DOM API required.
      * Make sure in browser environment.
@@ -21,3 +22,13 @@
     }
   }
 </script>
+
+<script>
+  import Icon from './icon.svelte';
+  export let type;
+  export let style = {};
+</script>
+
+<Icon style={style}>
+  <use slot="only-path" xlink:href={`#${type}`} />
+</Icon>

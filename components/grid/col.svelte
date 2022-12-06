@@ -17,10 +17,10 @@
   }
 
   export let span;
-  export let order;
-  export let offset;
-  export let push;
-  export let pull;
+  export let order = undefined;
+  export let offset = undefined;
+  export let push = undefined;
+  export let pull = undefined;
   export let xs = undefined;
   export let sm = undefined;
   export let md = undefined;
@@ -28,8 +28,8 @@
   export let xl = undefined;
   export let xxl = undefined;
   export let xxxl = undefined;
-  export let direction;
-  export let flex;
+  export let direction = undefined;
+  export let flex = undefined;
   export let prefixCls = 'ant-col';
 
   const { gutter, supportFlexGap, wrap } = useConsumeRow();

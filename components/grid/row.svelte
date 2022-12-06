@@ -7,11 +7,11 @@
   import { useProvideRow } from './context';
 
   export let gutter = 0;
-  export let align;
-  export let justify;
+  export let align = undefined;
+  export let justify = undefined;
   export let prefixCls = 'ant-row';
-  export let wrap;
-  export let direction;
+  export let wrap = undefined;
+  export let direction = undefined;
 
   let screens = {
     xs: true,
@@ -94,7 +94,6 @@
 
   $: gutter = computedGutter();
 
-  console.log('zzh row data', gutter, supportFlexGap, wrap);
   useProvideRow({
     gutter,
     supportFlexGap,
