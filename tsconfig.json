@@ -1,0 +1,33 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "antds": ["compoments/index.ts"],
+    },
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "strictNullChecks": false,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "target": "esnext",
+    "module": "esnext",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "es",
+    "dist",
+  ],
+  "include": [
+    "site/**/*.d.ts",
+    "site/**/*.ts",
+    "site/**/*.js",
+    "site/**/*.svelte",
+    "components/**/*.svelte",
+    "components/**/*.ts",
+  ],
+}
