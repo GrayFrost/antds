@@ -1,10 +1,8 @@
 <script>
   import Test from './Test.svelte';
-  let name = '123';
-  console.log(name);
+  import TestLayout from './TestLayout.svelte'
 </script>
 
 <main>
   <Test />
-  <div>hello world</div>
 </main>

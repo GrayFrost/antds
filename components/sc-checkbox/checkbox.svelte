@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, afterUpdate } from 'svelte';
   import classnames from 'classnames';
 
   export let prefixCls = 'rc-checkbox';
@@ -20,7 +20,7 @@
 
   let inputRef;
   const dispatch = createEventDispatcher();
-  let _checked = checked !== undefined ? checked : defaultChecked;
+  $: _checked = checked !== undefined ? checked : defaultChecked;
 
   export const focus = () => {
     inputRef && inputRef.focus();
@@ -31,13 +31,17 @@
   }
 
   const handleChange = (e) => {
+    console.log('zzh clidkckccllss-----', e, value);
     if (disabled) {
       return;
     }
 
-    if (!(checked !== undefined)) {
-      _checked = e.target.checked;
-    }
+    // if (checked !== undefined) {
+    //   _checked = e.target.checked;
+    // }
+
+    // TODO: 受控非受控
+    _checked = e.target.checked;
 
     dispatch('change', {
       target: {
@@ -56,31 +60,31 @@
   $: classString = classnames(
     prefixCls,
     className, {
-    [`${prefixCls}-checked`]: checked,
+    [`${prefixCls}-checked`]: !!_checked,
     [`${prefixCls}-disabled`]: disabled,
   });
 
-  const onClick = (e: MouseEvent) => {
+  const onClick = (e) => {
     dispatch('click', e);
   }
 
-  const onFocus = (e: FocusEvent) => {
+  const onFocus = (e) => {
     dispatch('focus', e);
   }
 
-  const onBlur = (e: FocusEvent) => {
+  const onBlur = (e) => {
     dispatch('blur', e);
   }
 
-  const onKeyUp = (e: KeyboardEvent) => {
+  const onKeyUp = (e) => {
     dispatch('keyup', e);
   }
 
-  const onKeyDown = (e: KeyboardEvent) => {
+  const onKeyDown = (e) => {
     dispatch('keydown', e);
   }
 
-  const onKeyPress = (e: KeyboardEvent) => {
+  const onKeyPress = (e) => {
     dispatch('keypress', e);
   }
   // TODO: 剩余input事件

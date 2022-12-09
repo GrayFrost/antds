@@ -1,6 +1,11 @@
+export { default as Affix } from './affix';
+export { default as Alert } from './alert';
 export { default as Button } from './button';
+export { default as Checkbox } from './checkbox';
 export { default as Col } from './col';
 export { default as Divider } from './divider';
 export { default as Grid } from './grid';
 export { default as Icon } from './icon';
+export { default as Layout } from './layout';
 export { default as Row } from './row';
+export { default as Switch } from './switch';

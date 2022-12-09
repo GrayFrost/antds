@@ -32,7 +32,7 @@
   export let flex = undefined;
   export let prefixCls = 'ant-col';
 
-  const { gutter, supportFlexGap, wrap } = useConsumeRow();
+  const { gutter, supportFlexGap, wrap } = useConsumeRow() || {};
   
   const computedClasses = () => {
     let sizeClassObj = {};

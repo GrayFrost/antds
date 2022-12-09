@@ -30,7 +30,7 @@
   import { formatStyle } from '../_util/styleToString';
 
   export let type;
-  let className;
+  let className = undefined;
   export { className as class };
   export let theme= undefined;
   export let twoToneColor = undefined;

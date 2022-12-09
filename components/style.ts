@@ -1,4 +1,9 @@
+import './affix/style';
+import './alert/style';
 import './button/style';
+import './checkbox/style';
 import './divider/style';
 import './grid/style';
 import './icon/style';
+import './layout/style';
+import './switch/style';
