@@ -75,8 +75,7 @@
     collapsedWidth,
   });
 
-  // const { addSider, removeSider } = useConsumeSider();
-  console.log('zzh sider sider', useConsumeSider());
+  const { addSider, removeSider } = useConsumeSider();
 
   $: {
     if (mql) {
@@ -144,7 +143,7 @@
 <div
   class={siderCls}
   {...$$restProps}
-  style="flex: 0 0 ${siderWidth}; max-width: {siderWidth}px; min-width: {siderWidth}px; width: {siderWidth}px;"
+  style="flex: 0 0 ${siderWidth}; max-width: {siderWidth}; min-width: {siderWidth}; width: {siderWidth};"
 >
   <div class={`${prefixCls}-children`}>
     <slot />

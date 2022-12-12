@@ -8,12 +8,10 @@ export interface SiderContext {
 }
 
 const useProvideSider = (data: SiderContext) => {
-  console.log('zzh set sider context');
   setContext(SiderContextKey, data);
 };
 
 const useConsumeSider = (): SiderContext => {
-  console.log('zzh get sider context');
   return getContext(SiderContextKey);
 }
 

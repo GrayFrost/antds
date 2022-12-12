@@ -5,14 +5,6 @@
 
 <section>
 <Layout>
-  <Layout.Header>Header</Layout.Header>
-  <Layout.Content>Content</Layout.Content>
-  <Layout.Footer>Footer</Layout.Footer>
-</Layout>
-</section>
-
-<section>
-<Layout>
   <Header>Header</Header>
   <Layout>
     <Sider>Sider</Sider>

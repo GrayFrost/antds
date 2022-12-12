@@ -31,7 +31,6 @@
   }
 
   const handleChange = (e) => {
-    console.log('zzh clidkckccllss-----', e, value);
     if (disabled) {
       return;
     }

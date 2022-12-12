@@ -53,11 +53,13 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] collapse
 - [ ] color-picker
 - [ ] comment
-- [x] icon
 - [x] divider
 - [x] grid
+- [x] icon
+- [x] layout
 - [x] row
 - [x] switch
+- [x] steps
 
 ## 功能
 判断是否支持flex

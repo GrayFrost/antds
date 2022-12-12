@@ -47,7 +47,7 @@
     // }
     dispatch('change', _value);
   }
-  console.log('zzh value', mergeValue);
+
   useProvideCheckbox({
     checkboxGroup: {
       toggleOption,

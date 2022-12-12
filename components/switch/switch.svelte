@@ -37,7 +37,6 @@
     defaultChecked,
     disabled,
   }
-  console.log('zzh swithc slots', loading);
 </script>
 
 <ScSwitch

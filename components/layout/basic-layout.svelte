@@ -1,6 +1,6 @@
 <script>
   import classnames from 'classnames';
-  import { useProvideLayout } from './context';
+  import { useProvideSider } from './context';
 
   export let prefixCls;
   export let hasSider = undefined;
@@ -9,13 +9,13 @@
 
   let siders = [];
 
-  useProvideLayout({
+  useProvideSider({
     addSider: (id) => {
       siders = [...siders, id];
     },
     removeSider: (id) => {
       siders = siders.filter(currentId => currentId !== id);
-    }
+    },
   });
   
   console.log('zzh siders', siders);
