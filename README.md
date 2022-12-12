@@ -90,7 +90,7 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [x] switch
 - [ ] table
 - [ ] tabs
-- [ ] tag
+- [x] tag
 - [ ] time-picker
 - [ ] timeline
 - [ ] tooltip
@@ -105,6 +105,8 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 ## TODO: 
 alert animate
 progress transition, line文字同一行样式
+
+tag wave
 
 事件统一dispatch 不是props
 

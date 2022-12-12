@@ -11,3 +11,4 @@ export { default as Progress } from './progress';
 export { default as Row } from './row';
 export { default as Steps } from './steps';
 export { default as Switch } from './switch';
+export { default as Tag } from './tag';

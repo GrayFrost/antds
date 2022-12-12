@@ -9,3 +9,4 @@ import './layout/style';
 import './progress/style';
 import './steps/style';
 import './switch/style';
+import './tag/style';
