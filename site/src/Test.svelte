@@ -1,6 +1,8 @@
 <script>
-  import { Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch } from "antds";
+  import { Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps } from "antds";
   import classnames from 'classnames';
+  import TestComponents from './TestComponents.svelte';
+  import TestComponent from './TestComponent.svelte';
 
   const IconFont = Icon.createFromIconfontCN({
     scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
@@ -45,6 +47,13 @@
   }
   
 </script>
+
+<section>
+  <TestComponents>
+    <TestComponent />
+    <TestComponent />
+  </TestComponents>
+</section>
 
 <section>
   <h3>button</h3>
@@ -178,6 +187,19 @@
   </Switch>
 </section>
 
+<section>
+  <Steps current={1} status="error">
+    <Steps.Step status="finish" title="Finished" description="This is a description.">
+      <Icon type="user" slot="icon" />
+    </Steps.Step>
+    <Steps.Step title="In Progress" subTitle="Left 00:00:08" description="This is a description." />
+    <Steps.Step status="process" title="In Progress" subTitle="Left 00:00:08" description="This is a description.">
+      <Icon type="loading" slot="icon" />
+    </Steps.Step>
+    <Steps.Step status="wait" title="Waiting" description="This is a description." />
+  </Steps>
+</section>
+<p style="height: 80px"></p>
 
 <style>
 

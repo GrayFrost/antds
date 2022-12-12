@@ -36,9 +36,23 @@ $$props是组件接收到的数据，不是全部
 if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错误
 
 ## WIP
+- [ ] affix
 - [x] alert
+- [ ] anchor
+- [ ] auto-complete
+- [ ] avatar
+- [ ] back-top
+- [ ] badge
+- [ ] breadcrumb
 - [x] button
+- [ ] calendar
+- [ ] carousel
+- [ ] cascader
+- [ ] checkbox
 - [x] col
+- [ ] collapse
+- [ ] color-picker
+- [ ] comment
 - [x] icon
 - [x] divider
 - [x] grid

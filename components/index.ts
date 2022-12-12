@@ -8,4 +8,5 @@ export { default as Grid } from './grid';
 export { default as Icon } from './icon';
 export { default as Layout } from './layout';
 export { default as Row } from './row';
+export { default as Steps } from './steps';
 export { default as Switch } from './switch';

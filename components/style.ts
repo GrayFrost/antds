@@ -6,4 +6,5 @@ import './divider/style';
 import './grid/style';
 import './icon/style';
 import './layout/style';
+import './steps/style';
 import './switch/style';
