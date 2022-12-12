@@ -53,19 +53,58 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] collapse
 - [ ] color-picker
 - [ ] comment
+- [ ] date-picker
+- [ ] desciprtions
 - [x] divider
+- [ ] drawer
+- [ ] dropdown
+- [ ] empty
+- [ ] form
 - [x] grid
 - [x] icon
+- [ ] image
+- [ ] input
+- [ ] input-number
 - [x] layout
+- [ ] list
+- [ ] mentions
+- [ ] menu
+- [ ] message
+- [ ] modal
+- [ ] notification
+- [ ] pagination
+- [ ] popconfirm
+- [ ] popover
+- [x] progress
+- [ ] radio
+- [ ] rate
+- [ ] result
 - [x] row
-- [x] switch
+- [ ] select
+- [ ] skeleton
+- [ ] slider
+- [ ] space
+- [ ] spin
+- [ ] statistic
 - [x] steps
+- [x] switch
+- [ ] table
+- [ ] tabs
+- [ ] tag
+- [ ] time-picker
+- [ ] timeline
+- [ ] tooltip
+- [ ] transfer
+- [ ] tree-select
+- [ ] typograhpy
+- [ ] upload
 
 ## 功能
 判断是否支持flex
 
 ## TODO: 
 alert animate
+progress transition, line文字同一行样式
 
 事件统一dispatch 不是props
 

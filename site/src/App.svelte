@@ -4,5 +4,5 @@
 </script>
 
 <main>
-  <TestLayout />
+  <Test />
 </main>
