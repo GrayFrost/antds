@@ -83,7 +83,7 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] select
 - [ ] skeleton
 - [ ] slider
-- [ ] space
+<delete> - [ ] space </delete>
 - [ ] spin
 - [ ] statistic
 - [x] steps

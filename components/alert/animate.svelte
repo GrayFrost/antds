@@ -12,7 +12,8 @@
   $: active = `${transitionName}-active`; // enter end, leave start
   $: leave = `${transitionName}-leave`; // leave end
 
-  let dynamicTransitionClass = '';
+  let startName;
+  let endName;
 
 
   const onEnterStart = () => {
