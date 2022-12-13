@@ -103,7 +103,7 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 判断是否支持flex
 
 ## TODO: 
-alert animate
+alert animate改进
 progress transition, line文字同一行样式
 
 tag wave

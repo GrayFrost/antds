@@ -1,10 +1,8 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { fade } from 'svelte/transition';
-  import { circInOut} from 'svelte/easing';
+  import { circInOut } from 'svelte/easing';
   import classnames from 'classnames';
   import Icon from '../icon';
-  import Animate from './animate.svelte';
 
   function getPropsSlot(slots, props, prop = 'default') {
     if (props && props[prop]) {
@@ -24,7 +22,7 @@
   export let iconType = undefined;
   export let style = undefined;
   export let prefixCls = 'ant-alert';
-  let className = undefined;
+  let className;
   export { className as class };
   export let banner = undefined;
   export let direction = undefined;
@@ -95,12 +93,6 @@
     closable = true;
   }
 
-  // animate class
-  $: motionClass = {
-    [`${prefixCls}-motion-leave`]: true,
-    [`${prefixCls}-motion-leave-active`]: closing,
-  }
-
   $: alertCls = classnames(prefixCls, {
     [`${prefixCls}-${type}`]: true,
     [`${prefixCls}-with-description`]: !!descriptionData,
@@ -108,7 +100,7 @@
     [`${prefixCls}-banner`]: !!banner,
     [`${prefixCls}-closable`]: closable,
     [`${prefixCls}-rtl`]: direction === 'rtl',
-  }, motionClass);
+  }, className);
 
   const hasCloseTextSlot = !!slots?.closeText;
   const hasMessageSlot = !!slots?.message;
@@ -116,27 +108,34 @@
   const hasIconSlot = !!slots?.icon;
   const hasCloseIconSlot = !!slots?.closeIconSlot;
 
-  let hide = false;
-
-  $: testClass = classnames(prefixCls, 'test', 
-    `${prefixCls}-motion-leave`, {
-    [`${prefixCls}-motion-leave-active`]: hide,
-  });
-  const testHide = () => {
-    hide = true;
+  function slideUp(node, {
+    duration = 300,
+  }) {
+    return {
+      duration,
+      css: (t, u) => {
+        const data = circInOut(t);
+        return `
+          max-height: ${data};
+          opacity: ${data};
+          padding-top: ${data};
+          padding-bottom: ${data};
+          margin-bottom: ${data};
+        `
+      }
+    }
   }
 </script>
 
-<div class={testClass} on:click={testHide}>test</div>
 {#if closed}
   {""}
-{:else}
-<!-- <Animate transitionName={`${prefixCls}-motion`} on:end={animationEnd}> -->
+{:else if !closing}
   <div
     bind:this={alertRef}
-    data-show={!closing}
     class={alertCls}
     style={style}
+    on:outroend={animationEnd}
+    transition:slideUp
   >
     {#if showIcon}
       {#if hasIconSlot}
@@ -179,13 +178,4 @@
       </span>
     {/if}
   </div>
-<!-- </Animate> -->
 {/if}
-
-<style>
-
-  .test {
-    height: 30px;
-    background: orange;
-  }
-</style>

@@ -58,6 +58,31 @@
   
 </script>
 
+<section>
+  <h3>alert</h3>
+  <Alert
+    message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
+    type="warning"
+    closable
+    on:close={() => console.log('zzh alert close')}
+  />
+  <Alert
+    message="title"
+    description="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
+    type="warning"
+    closable
+    on:close={() => console.log('zzh alert close')}
+  />
+  <Alert
+    message="Warning Text Warning Text Warning TextW arning Text Warning Text Warning TextWarning Text"
+    type="error"
+    closable
+    on:close={() => console.log('zzh alert close')}
+  />
+  <Alert message="Error Text"
+  description="Error Description Error Description Error Description Error Description Error Description Error Description" closable />
+</section>
+
 <section id="progress-demo">
   <h3>progress</h3>
   <Progress type="circle" percent="75" />
