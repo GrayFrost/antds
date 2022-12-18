@@ -129,8 +129,6 @@
     color => Object.prototype.toString.call(color) === '[object Object]',
   );
 
-  $: console.log('zzh gradient', gradient, strokeColorList, strokeColor);
-
   $: sortGradient = Object.keys(gradient).sort((a, b) => stripPercentToNumber(a) - stripPercentToNumber(b));
 
   $: pathFirst = {

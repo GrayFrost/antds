@@ -15,7 +15,7 @@ export function formatStyle(obj: { [key: string]: any } | string = {}) {
         return style;
       }
       const unit =
-        typeof value === 'number' && /width|height|top|right|buttom|left/i.test(key) ? 'px' : '';
+        typeof value === 'number' && /width|height|top|right|bottom|left/i.test(key) ? 'px' : '';
       return style.concat(
         `${key.replace(/([A-Z])/, a => `-${a.toLowerCase()}`)}:${value}${unit}`,
       );

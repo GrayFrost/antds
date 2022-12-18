@@ -11,10 +11,12 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "allowJs": true,
+    "checkJs": true,
     "target": "esnext",
     "module": "esnext",
     "isolatedModules": true,
     "skipLibCheck": true,
+    "useDefineForClassFields": true,
   },
   "exclude": [
     "node_modules",

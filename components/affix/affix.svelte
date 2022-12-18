@@ -1,7 +1,10 @@
 <script>
   import { onMount, afterUpdate, onDestroy, createEventDispatcher } from 'svelte';
   import classnames from 'classnames';
-  import getScroll from '../_util/getScroll'
+  import getScroll from '../_util/getScroll';
+  import { formatStyle } from '../_util/styleToString';
+  import throttleByAnimationFrame from '../_util/throttleByAnimationFrame';
+  import addEventListener from '../sc-util/Dom/addEventListener'
 
   const dispatch = createEventDispatcher();
 
@@ -40,6 +43,7 @@
   export let offsetBottom = undefined;
   export let target = undefined;
   export let prefixCls = 'ant-fix';
+  export let style = {};
 
   let timeout;
 
@@ -53,19 +57,17 @@
     'load',
   ];
   const eventHandlers = {};
-  let affixStyle = undefined;
-  let placeholderStyle = undefined;
+  let affixStyle = {};
+  let placeholderStyle = {};
   let fixedNodeRef;
   let placeholderNodeRef;
 
-  const currentTarget = target || getDefaultTarget;
+  $: currentTarget = target || getDefaultTarget;
   timeout = setTimeout(() => {
     setTargetEventListeners(currentTarget);
   });
 
-  afterUpdate(() => {
-    updatePosition({});
-  });
+  const updatePosition = throttleByAnimationFrame(_updatePosition);
 
   onDestroy(() => {
     clearEventListeners();
@@ -77,6 +79,7 @@
     const currentTarget = target || getDefaultTarget;
     const originalAffixStyle = affixStyle;
     const isWindow = currentTarget() === window;
+
     if (e.type === 'scroll' && originalAffixStyle && affixStyleData && isWindow) {
       return;
     }
@@ -106,14 +109,14 @@
       width: placeholderNodeRef.offsetWidth,
     })
   }
-
-  const updatePosition = (e) => {
+  
+  function _updatePosition(e) {
     const currentTarget = target || getDefaultTarget;
     const targetNode = currentTarget();
     offsetTop = typeof offsetTop === 'undefined' ? offset : offsetTop;
 
     const scrollTop = getScroll(targetNode, true);
-    const affixNode = placeholderNodeRef; // TODO: 待确认
+    const affixNode = placeholderNodeRef;
     const elemOffset = getOffset(affixNode, targetNode);
     const elemSize = {
       width: fixedNodeRef.offsetWidth,
@@ -202,17 +205,32 @@
     })
   }
 
+  $: {
+    if (target) {
+      clearEventListeners();
+      setTargetEventListeners(target);
+      updatePosition({});
+    }
+    if (offsetTop || offsetBottom) {
+      updatePosition({});
+    }
+  }
+
   $: className = classnames({
     [prefixCls]: !!affixStyle
   });
+  $: _placeholderStyle = {
+    ...placeholderStyle,
+    ...style,
+  }
 </script>
 
 <div
-  style={placeholderStyle}
+  style={formatStyle(_placeholderStyle)}
   bind:this={placeholderNodeRef}
   {...$$restProps}
 >
-  <div class={className} bind:this={fixedNodeRef} style={affixStyle}>
+  <div class={className} bind:this={fixedNodeRef} style={formatStyle(affixStyle ? affixStyle : {})}>
     <slot />
   </div>
 </div>

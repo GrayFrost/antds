@@ -65,8 +65,6 @@
     [`${prefixCls}-inner`]: true,
     [`${prefixCls}-circle-gradient`]: isGradient,
   });
-
-  $: console.log('zzh outer circle strokecolor', strokeColor);
 </script>
 
 <div class={wrapperClassName} style={formatStyle(circleStyle)}>

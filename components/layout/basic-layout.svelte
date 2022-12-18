@@ -18,7 +18,6 @@
     },
   });
   
-  console.log('zzh siders', siders);
   const restProps = $$restProps;
   $: divCls = classnames(className, prefixCls, {
     [`${prefixCls}-has-sider`]: hasSider || siders.length > 0,

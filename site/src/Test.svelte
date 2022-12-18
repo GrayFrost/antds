@@ -1,5 +1,5 @@
 <script>
-  import { Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag } from "antds";
+  import { Affix, Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag } from "antds";
   import classnames from 'classnames';
   import TestComponents from './TestComponents.svelte';
   import TestComponent from './TestComponent.svelte';
@@ -55,7 +55,12 @@
   function handleTagChange(e){
     console.log('zzh tag change', e.detail);
   }
+
+  function onAffixChange(e){
+    console.log('zzh fixchange', e);
+  }
   
+  let affixWrapRef;
 </script>
 
 <section>
@@ -83,20 +88,24 @@
   description="Error Description Error Description Error Description Error Description Error Description Error Description" closable />
 </section>
 
-<section id="progress-demo">
-  <h3>progress</h3>
-  <Progress type="circle" percent="75" />
-  <Progress type="circle" percent="70" status="exception" />
-  <Progress type="circle" percent="100" />
+<p style="height: 800px; background: pink"></p>
 
-  <Progress type="dashboard" percent="75" />
-  <Progress percent="50" steps="3" />
+<section id="affix-demo">
+  <Affix offsetTop={10} on:change={onAffixChange}>
+    <Button type="primary">button</Button>
+  </Affix>
+  <Affix offsetBottom={10}>
+    <Button type="primary">button bottom</Button>
+  </Affix>
 
-  <Progress percent="30" />
-  <Progress percent="50" status="active" />
-  <Progress percent="70" status="exception" />
-  <Progress percent="100" />
-  <Progress percent="50" showInfo={false} />
+  <div style="height: 100px;overflow-y: scroll;"  bind:this={affixWrapRef}>
+    <div style="background: blue; height: 300px">
+      <p style="height: 50px;">height</p>
+      <Affix target={() => affixWrapRef}>
+        <Button type="primary">target</Button>
+      </Affix>
+    </div>
+  </div>
 </section>
 
 <section>
@@ -121,7 +130,7 @@
   <Tag color="#2db7f5">#2db7f5</Tag>
 </section>
 
-<p style="height: 80px"></p>
+<p style="height: 2000px; background: orange;"></p>
 
 <style>
 

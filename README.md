@@ -36,7 +36,7 @@ $$props是组件接收到的数据，不是全部
 if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错误
 
 ## WIP
-- [ ] affix
+- [x] affix
 - [x] alert
 - [ ] anchor
 - [ ] auto-complete
@@ -51,7 +51,6 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] checkbox
 - [x] col
 - [ ] collapse
-- [ ] color-picker
 - [ ] comment
 - [ ] date-picker
 - [ ] desciprtions
@@ -83,7 +82,6 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] select
 - [ ] skeleton
 - [ ] slider
-<delete> - [ ] space </delete>
 - [ ] spin
 - [ ] statistic
 - [x] steps
@@ -109,6 +107,10 @@ progress transition, line文字同一行样式
 tag wave
 
 事件统一dispatch 不是props
+
+ant-design-vue 的几个问题：
+formatStyle里的正则bottom写成了buttom
+有些class是[object Object]
 
 
 

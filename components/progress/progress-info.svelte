@@ -7,7 +7,6 @@
   export let progressStatus;
   export let percent;
   export let isLineType;
-  $: console.log('zzh islinetype', isLineType, progressStatus, showInfo);
 </script>
 
 {#if !showInfo}
