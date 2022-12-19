@@ -1,5 +1,6 @@
 import './affix/style';
 import './alert/style';
+import './anchor/style';
 import './button/style';
 import './checkbox/style';
 import './divider/style';

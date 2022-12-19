@@ -1,3 +1,7 @@
+export function isWindow(obj: any) {
+  return obj !== null && obj !== undefined && obj === obj.window;
+}
+
 export default function getScroll(target: any, top: boolean): number {
   if (typeof window === 'undefined') {
     return 0;
