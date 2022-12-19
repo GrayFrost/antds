@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { circInOut } from 'svelte/easing';
   import classnames from 'classnames';
   import Icon from '../icon';
+  import { slideUp } from '../_util/transition';
 
   function getPropsSlot(slots, props, prop = 'default') {
     if (props && props[prop]) {
@@ -108,23 +108,7 @@
   const hasIconSlot = !!slots?.icon;
   const hasCloseIconSlot = !!slots?.closeIconSlot;
 
-  function slideUp(node, {
-    duration = 300,
-  }) {
-    return {
-      duration,
-      css: (t, u) => {
-        const data = circInOut(t);
-        return `
-          max-height: ${data};
-          opacity: ${data};
-          padding-top: ${data};
-          padding-bottom: ${data};
-          margin-bottom: ${data};
-        `
-      }
-    }
-  }
+  
 </script>
 
 {#if closed}

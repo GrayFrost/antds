@@ -37,7 +37,6 @@
   });
 
   const handleClick = (e) => {
-    console.log('zzh handleclickc link', title, href);
     contextHandleClick(e, { title, href });
     scrollTo(href);
   }

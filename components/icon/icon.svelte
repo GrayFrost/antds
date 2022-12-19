@@ -43,7 +43,7 @@
   let defaultTheme = "outlined";
   let iconSvg;
   let classString;
-  let extraSVGAttrs;
+  let extraSVGAttrs = {};
   $: {
     classString = classnames(
       {

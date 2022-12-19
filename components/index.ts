@@ -1,6 +1,7 @@
 export { default as Affix } from './affix';
 export { default as Alert } from './alert';
 export { default as Anchor } from './anchor';
+export { default as BackTop } from './back-top';
 export { default as Button } from './button';
 export { default as Checkbox } from './checkbox';
 export { default as Col } from './col';

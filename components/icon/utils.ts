@@ -38,7 +38,7 @@ export function removeTypeTheme(type: string) {
 export function withThemeSuffix(type: string, theme: ThemeType) {
   let result = type
     .replace(/^\w/, a => a.toUpperCase())
-    .replace(/-(\w)/, (w,a) => a.toUpperCase());
+    .replace(/-(\w)/g, (w,a) => a.toUpperCase());
   if (theme === 'filled') {
     result += 'Filled';
   } else if (theme === 'outlined') {

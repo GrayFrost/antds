@@ -1,5 +1,5 @@
 <script>
-  import { Affix, Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag, Anchor } from "antds";
+  import { Affix, Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag, Anchor, BackTop } from "antds";
   import classnames from 'classnames';
   import TestComponents from './TestComponents.svelte';
   import TestComponent from './TestComponent.svelte';
@@ -56,10 +56,6 @@
     console.log('zzh tag change', e.detail);
   }
 
-  function onAffixChange(e){
-    console.log('zzh fixchange', e);
-  }
-
   function onAnchorClick(e, link) {
     console.log('zzh anchor click', e, link);
   }
@@ -67,6 +63,7 @@
   let affixWrapRef;
 </script>
 
+<BackTop></BackTop>
 <section>
   <h3>alert</h3>
   <Alert
@@ -93,7 +90,7 @@
 </section>
 
 <section id="affix-demo">
-  <Affix offsetTop={10} on:change={onAffixChange}>
+  <Affix offsetTop={10}>
     <Button type="primary">button</Button>
   </Affix>
   <Affix offsetBottom={10}>

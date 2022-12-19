@@ -41,7 +41,7 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [x] anchor
 - [ ] auto-complete
 - [ ] avatar
-- [ ] back-top
+- [x] back-top
 - [ ] badge
 - [ ] breadcrumb
 - [x] button
