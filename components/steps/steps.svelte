@@ -2,7 +2,6 @@
   import { createEventDispatcher } from 'svelte';
   import classnames from 'classnames';
   import ScSteps, { Step as ScStep } from '../sc-steps';
-  import Icon from '../icon';
 
   const dispatch = createEventDispatcher();
 
@@ -24,8 +23,8 @@
   }
 
   $: stepsClassName = classnames(prefixCls, {
-    [`${prefixCls.value}-rtl`]: direction === 'rtl',
-    [`${prefixCls.value}-with-progress`]: percent !== undefined,
+    [`${prefixCls}-rtl`]: direction === 'rtl',
+    [`${prefixCls}-with-progress`]: percent !== undefined,
   });
 
 </script>

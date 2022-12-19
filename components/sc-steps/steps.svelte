@@ -1,22 +1,22 @@
 <script>
   import { createEventDispatcher, setContext } from 'svelte';
+  import classnames from 'classnames';
   import { writable } from 'svelte/store';
   import { ScStepsContextKey } from './context';
 
   const dispatch = createEventDispatcher();
 
-  import classnames from 'classnames';
-  export let type;
+  let className;
+  export { className as class };
+  export let type = undefined;
   export let prefixCls = 'vc-steps';
   export let iconPrefix = 'vc';
   export let direction = 'horizontal';
   export let labelPlacement = 'horizontal';
   export let status = 'process';
   export let size = '';
-  export let progressDot;
-  export let initial = 0;
+  export let progressDot = undefined;
   export let current = 0;
-  export let icons;
 
   let stepIndex = -1;
   setContext(ScStepsContextKey, {

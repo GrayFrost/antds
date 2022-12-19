@@ -35,6 +35,8 @@ $$props是组件接收到的数据，不是全部
 
 if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错误
 
+无法使用cloneElement来修改子组件的props，只能通过context的方式
+
 ## WIP
 - [x] affix
 - [x] alert
@@ -51,7 +53,6 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] checkbox
 - [x] col
 - [ ] collapse
-- [ ] comment
 - [ ] date-picker
 - [ ] desciprtions
 - [x] divider
@@ -61,7 +62,6 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [ ] form
 - [x] grid
 - [x] icon
-- [ ] image
 - [ ] input
 - [ ] input-number
 - [x] layout
@@ -77,13 +77,11 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 - [x] progress
 - [ ] radio
 - [ ] rate
-- [ ] result
 - [x] row
 - [ ] select
 - [ ] skeleton
 - [ ] slider
 - [ ] spin
-- [ ] statistic
 - [x] steps
 - [x] switch
 - [ ] table
@@ -109,8 +107,9 @@ tag wave
 事件统一dispatch 不是props
 
 ant-design-vue 的几个问题：
-formatStyle里的正则bottom写成了buttom
+
 有些class是[object Object]
+
 
 
 
