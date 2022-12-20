@@ -39,7 +39,6 @@
   const bindScrollEvent = () => {
     const getTarget = target || getDefaultTarget;
     const container = getTarget();
-    console.log('zzh bindscrollevbent', container);
     scrollEvent = addEventListener(container, 'scroll', (e) => {
       handleScroll({
         target: container,

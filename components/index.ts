@@ -11,6 +11,7 @@ export { default as Icon } from './icon';
 export { default as Layout } from './layout';
 export { default as Progress } from './progress';
 export { default as Row } from './row';
+export { default as Spin } from './spin';
 export { default as Steps } from './steps';
 export { default as Switch } from './switch';
 export { default as Tag } from './tag';

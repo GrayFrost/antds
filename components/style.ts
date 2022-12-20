@@ -9,6 +9,7 @@ import './grid/style';
 import './icon/style';
 import './layout/style';
 import './progress/style';
+import './spin/style';
 import './steps/style';
 import './switch/style';
 import './tag/style';

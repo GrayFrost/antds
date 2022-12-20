@@ -37,6 +37,8 @@ if判断条件不能直接用于slot, 比如{#if xxx}<slot />{/if}， 此为错�
 
 无法使用cloneElement来修改子组件的props，只能通过context的方式
 
+在slot外包裹一层，然后用use指令，可以改一些slot的数据，比如说动态修改class
+
 ## WIP
 - [x] affix
 - [x] alert

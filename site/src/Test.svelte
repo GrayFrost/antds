@@ -1,5 +1,5 @@
 <script>
-  import { Affix, Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag, Anchor, BackTop } from "antds";
+  import { Affix, Divider, Button, Row, Col, Icon, Alert, Checkbox, Switch, Steps, Progress, Tag, Anchor, BackTop, Spin } from "antds";
   import classnames from 'classnames';
   import TestComponents from './TestComponents.svelte';
   import TestComponent from './TestComponent.svelte';
@@ -61,9 +61,18 @@
   }
   
   let affixWrapRef;
+  let spinning = false;
+  function changeSpin() {
+    spinning  = true;
+  }
 </script>
 
+
 <BackTop></BackTop>
+<TestComponent>
+  <p>测试</p>
+  <p>hello</p>
+</TestComponent>
 <section>
   <h3>alert</h3>
   <Alert
@@ -130,28 +139,29 @@
 </section>
 
 <section>
-  <h3>anchor</h3>
-  <Anchor affix={false} on:click={onAnchorClick}>
-    <Anchor.Link href="#components-anchor-demo-basic" title="Basic demo" />
-    <Anchor.Link href="#components-anchor-demo-static" title="Static demo" />
-    <Anchor.Link href="#components-anchor-demo-basic" title="Basic demo with Target" target="_blank" />
-    <Anchor.Link href="#API" title="API">
-      <Anchor.Link href="#Anchor-Props" title="Anchor Props" />
-      <Anchor.Link href="#Link-Props" title="Link Props" />
-    </Anchor.Link>
-  </Anchor>
+  <h3>spin</h3>
+
+  <Spin spinning={true}>
+    <Alert
+      message="Alert message title"
+      description="Further details about the context of this alert."
+    ></Alert>
+    <Icon type="loading" slot="indicator"/>
+  </Spin>
+  <Button on:click={changeSpin}>change</Button>
 </section>
 
-<div id="components-anchor-demo-basic" style="height: 500px;background: orange"></div>
-<h2 id="API" >api</h2>
-<div style="height: 800px;background: pink;">
-  <div id="Anchor-Props" style="height: 400px;">hello world</div>
-  <div id="Link-Props" style="border:1px solid red">你好</div>
-</div>
-<div style="height: 300px"></div>
 
 <style>
   section {
     margin: 20px 20px;
   }
+  .example {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 30px 50px;
+    margin: 20px 0;
+}
 </style>
